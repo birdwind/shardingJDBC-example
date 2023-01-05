@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.birdwind.sharding.model.mapper.UserMapper">
+    <resultMap id="baseResultMap" type="com.birdwind.sharding.model.PO.UserPO">
+        <id property="id" column="_id"/>
+        <result property="nickname" column="_nickname"/>
+        <result property="password" column="_password"/>
+        <result property="sex" column="_sex"/>
+        <result property="birthday" column="_birthday"/>
+        <result property="brand" column="_brand"/>
+    </resultMap>
+
+    <insert id="insert" parameterType="com.birdwind.sharding.model.PO.UserPO">
+        INSERT INTO t_user (_nickname, _password, _sex, _birthday, _brand) VALUES (#{nickname}, #{password}, #{sex}, #{birthday}, #{brand})
+    </insert>
+
+    <select id="select" resultMap="baseResultMap">
+        SELECT * FROM t_user WHERE _id= 814799003127382017
+    </select>
+</mapper>
